@@ -188,7 +188,7 @@ clicks: 4
 
 <OpSplit :step="$clicks" />
 
-<div class="card text-sm mt-1">🇳🇴 🇧🇪 🇳🇱 Bane NOR's latest RINF release, like Belgium and the Netherlands and probably others: <b>1 OP = 1 PL</b>. Connectivity between PLs comes for free, as SoLs. The cost: OPs that no longer match what an OP used to mean.</div>
+<div class="card text-sm -mt-10">🇳🇴 🇧🇪 🇳🇱 Norway, Belgium, the Netherlands and others: <b>1 OP = 1 PL</b>. PL connectivity comes free as SoLs; an OP no longer means what it used to.</div>
 
 <!--
 Recap from the previous talk. Splitting gives every PL its own OP, so SoLs (some with solNature "link") connect them.
