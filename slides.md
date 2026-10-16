@@ -178,7 +178,7 @@ layout: section
 
 # How are primary locations connected?
 
-## Four ways to get PL-to-PL connectivity
+## From splitting OPs to a meso topology level
 
 ---
 clicks: 4
@@ -283,46 +283,74 @@ In essence a second meso topology. Tick a box to keep a connection internal.
 -->
 
 ---
+clicks: 3
+---
 
-# Four options side by side
+# Option 4 · A meso topology level
 
-<div class="rosetta mt-2">
+<MesoLevel :step="$clicks" />
 
-| | Data needed | Correct? | New concept? | Today in RINF? |
-|---|---|---|---|---|
-| **0 · Split the OP** (1 OP = 1 PL) | OPs and SoLs per PL | ✅ as far as the SoLs go | — | ✅ Norway |
-| **1 · Assume everything connected** | PL → OP, OP + SoL | ❌ too many connections | — | ✅ |
-| **1b · Main PL** | + a main PL per OP | ⚠️ some wrong, some missing | main PL property | ❌ |
-| **2 · Route on the micro topology** | micro topology + PL areas | ✅ drivable; not always requestable | — | ⚠️ needs micro topology |
-| **3 · PL connection object** | PL connections (generated from 2) | ✅ as curated by the IM | PL connection element | ❌ |
+<!--
+The IM delivers the meso level itself, next to the micro level, as a topology: meso net elements and net relations.
+0 Every meso net element aggregates micro net elements. Ideally one meso node per primary location, plus links for the tracks in between.
+1 Net relations keep the navigability, so routing on the meso level gives the same six connections as option 2.
+2 OPs, PLs and SoLs are positioned on the meso level separately, the way they are positioned on the micro level. One meso node, one PL: that is what telematics needs. The OP is an area over several nodes.
+3 And anything else can be positioned on it: a timing point, a planning speed, an IM border.
+This follows the practice of IMs that already keep a meso network, and it is the most future proof option.
+-->
+
+---
+
+# Option 3 or option 4?
+
+<div class="grid grid-cols-2 gap-5 mt-2">
+<div class="concept">
+<div class="tag">Option 3</div>
+
+### PL connection object
+
+- an **object** next to the topology, like a SoL
+- carries **properties on the connection**: requestable, running time, …
+- no aggregation of micro elements
+- simple to add to RINF
 
 </div>
+<div class="concept opt4">
+<div class="tag tsi">Option 4</div>
 
-<div v-click class="mt-5 text-lg text-center">Without a micro topology, PL connectivity is a <b>guess</b>. With one, it is <b>routing</b>.</div>
+### Meso topology level
+
+- a **topology**: net elements and net relations, with navigability
+- **aggregates the micro level**, so the two stay consistent
+- you can **position anything** on it: OPs, PLs, SoLs, timing points, borders
+- the most advanced, and the most **future proof**
+
+</div>
+</div>
+
+<div v-click class="card mt-5">Both build on option 2: generate the meso connections from the micro topology, then publish them as objects (3) or as a level of their own (4).</div>
+
+<!--
+Option 3 puts properties on the connection. Option 4 lets you place other things on the meso view. They are not exclusive: a PL connection could later become a relation of the meso level.
+-->
 
 ---
-layout: section
----
 
-# Topologies need levels
-
----
-
-# What RINF cannot say yet
+# What option 4 needs from RINF
 
 <div class="grid grid-cols-2 gap-6 mt-2">
 <div>
 
 <div class="prob mb-4">
 
-### 1 · Micro topology is already hard
-For many IMs, delivering a micro topology at all is the biggest hurdle. Options 2 and 3 build on it.
+### 1 · A micro topology first
+For many IMs, delivering a micro topology at all is the biggest hurdle. Options 2, 3 and 4 all build on it.
 
 </div>
 <div class="prob">
 
-### 2 · No way to tell views apart
-There is no concept to group net elements and say **"this group is micro"**, **"this group is the meso view for PLs"**, **"this is the catenary view"**.
+### 2 · A way to tell levels apart
+There is no concept to group net elements and say **"this group is micro"**, **"this group is the meso level"**, or to say which micro elements a meso element **aggregates**.
 
 </div>
 </div>
@@ -330,22 +358,24 @@ There is no concept to group net elements and say **"this group is micro"**, **"
 
 <div class="rosetta">
 
-| | Levels and views |
+| | Levels and aggregation |
 |---|---|
 | RailTopoModel | levels of detail: micro · meso · macro, one network per level |
 | railML 3 | `level` per network with a `descriptionLevel`, listing the network resources on that level |
-| ERA ontology | — no level or view concept |
+| ERA ontology | — no level concept, no aggregation |
 
 </div>
 
 <div v-click class="smallcode mt-3">
 
 ```turtle
-# hypothetical: these classes do not exist in the ERA ontology
-:plView a era:TopologyView ;
-  era:descriptionLevel :meso ;
-  era:hasNetElement :pl-P , :pl-Y , :pl-F ;
-  era:hasNetRelation :plc-P-Y .
+# hypothetical: not in the ERA ontology
+:meso a era:TopologyLevel ; era:descriptionLevel :meso .
+:mP a era:NetElement ;
+  era:inLevel :meso ;
+  era:aggregates :t1 , :t2a , :t2b .   # micro elements
+:plP era:netReference [ a era:NetAreaReference ;
+  era:onNetElement :mP ] .            # PL on the meso level
 ```
 
 </div>
@@ -354,9 +384,27 @@ There is no concept to group net elements and say **"this group is micro"**, **"
 </div>
 
 <!--
-Once you accept that OP-SoL and PL connections are each their own meso view, RINF needs a way to say which net elements belong to which view and level. Today all net elements are one flat bag.
-The Turtle is a sketch for discussion, not a proposal for class names.
+Option 4 is where the gap shows: the ERA ontology has net elements in one flat bag. It needs a level, and an aggregation link from meso to micro. The Turtle is a sketch for discussion, not a proposal for class names.
 -->
+
+---
+
+# Five options side by side
+
+<div class="rosetta mt-2">
+
+| | Data needed | Correct? | New concept? | Today in RINF? |
+|---|---|---|---|---|
+| **0 · Split the OP** (1 OP = 1 PL) | OPs and SoLs per PL | ✅ as far as the SoLs go | — | ✅ Norway, Belgium, the Netherlands, … |
+| **1 · Assume everything connected** | PL → OP, OP + SoL | ❌ too many connections | — | ✅ |
+| **1b · Main PL** | + a main PL per OP | ⚠️ some wrong, some missing | main PL property | ❌ |
+| **2 · Route on the micro topology** | micro topology + PL areas | ✅ drivable; not always requestable | — | ⚠️ needs micro topology |
+| **3 · PL connection object** | PL connections (generated from 2) | ✅ as curated by the IM | PL connection element | ❌ |
+| **4 · Meso topology level** | meso level aggregating micro, OPs and PLs on it | ✅ drivable, 1 node = 1 PL | topology levels, aggregation | ❌ |
+
+</div>
+
+<div v-click class="mt-5 text-lg text-center">Without a micro topology, PL connectivity is a <b>guess</b>. With one, it is <b>routing</b>. With a meso level, it is a <b>view everyone can build on</b>.</div>
 
 ---
 layout: center
@@ -368,7 +416,7 @@ class: text-center
 <div class="grid grid-cols-3 gap-6 mt-8 text-left">
 <div class="tk">🔵<br><b>OPs, PLs and SoLs are mesoscopic entities.</b><br>They are placed on a topology; they are not the topology.</div>
 <div class="tk">🧭<br><b>PL connectivity needs the micro topology.</b><br>Without it you guess; with it you route.</div>
-<div class="tk">🤝<br><b>We need a shared best practice.</b><br>And a way to tell micro and meso views apart in RINF.</div>
+<div class="tk">🤝<br><b>We need a shared best practice.</b><br>And topology levels in RINF, so a meso level can be delivered.</div>
 </div>
 
 ---

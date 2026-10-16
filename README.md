@@ -2,7 +2,7 @@
 
 Slidev deck, follow-up to [One network, one truth](https://github.com/Matdata-eu/slides-railway-topology).
 It takes the railway topology to the mesoscopic level: what operational points (OP), primary locations (PL)
-and sections of line (SoL) are, how differently infrastructure managers fill them in, and four ways to connect
+and sections of line (SoL) are, how differently infrastructure managers fill them in, and five ways to connect
 primary locations to each other. Presented on behalf of Bane NOR.
 
 ## Getting started
@@ -35,7 +35,7 @@ Toy networks:
 
 | Component | Slide | What you can do live |
 |---|---|---|
-| `TopoBuildUp` | Where we left off | Last two steps of the first talk: meso and macro aggregation |
+| `TopoBuildUp` | Where we left off | Last two steps of the first talk: meso and macro aggregation (macro keeps line ends, junctions and interchange stations) |
 | `MicroViews` | One network, many topologies | Track, catenary and signal (route) topology of the same station |
 | `MesoViews` | And at meso level too | Micro tracks, OP–SoL view, PL view, macro line |
 | `ImVariants` | One corridor, three IMs | Three ways IMs turn the same corridor into OPs, SoLs, primary and subsidiary locations |
@@ -44,3 +44,4 @@ Toy networks:
 | `PlConnect mode="main"` | Option 1b | One main PL per OP; wrong and missing connections |
 | `PlConnect mode="route"` | Option 2 | Click a PL to route out of it through navigable relations; generate all PL connections |
 | `PlConnect mode="explicit"` | Option 3 | PL connections as objects; untick to keep one internal |
+| `MesoLevel` | Option 4 | A meso topology level aggregating the micro level, with OPs, PLs, SoLs and other things positioned on it |
