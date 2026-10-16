@@ -310,7 +310,7 @@ This follows the practice of IMs that already keep a meso network, and it is the
 ### PL connection object
 
 - an **object** next to the topology, like a SoL
-- carries **properties on the connection**: requestable, running time, …
+- could carry **additional properties** on the connection: requestable, running time, …
 - no aggregation of micro elements
 - simple to add to RINF
 
