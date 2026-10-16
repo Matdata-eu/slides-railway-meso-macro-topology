@@ -259,7 +259,7 @@ RINF is an **infrastructure view**, not yet a complete telematics view.
 
 <div v-click class="card">✅ <b>Publish them all.</b> The RIS shows a drivable connection. If an RU requests a path that is not possible, the IM answers then.</div>
 <div v-click class="card mt-3">🏷️ <b>Publish with a flag.</b> Mark which connections can be requested.</div>
-<div v-click class="card mt-3">✂️ <b>Curate.</b> Generate, then let the IM decide what to publish. That is option 3.</div>
+<div v-click class="card mt-3">✂️ <b>Let the IM define them.</b> The IM decides which connections exist. That is where options 3 and 4 go.</div>
 
 </div>
 </div>
@@ -274,7 +274,7 @@ There are several valid ways to look at this. Showing a connection that turns ou
 
 <PlConnect mode="explicit" />
 
-<div class="text-sm -mt-1">What the <b>SoL</b> is to the OP, a <b>PL connection</b> is to the PL. Generate them with option 2, then let the IM keep what it can offer.</div>
+<div class="text-sm -mt-1">What the <b>SoL</b> is to the OP, a <b>PL connection</b> is to the PL. The IM defines them and publishes what it can offer.</div>
 
 <!--
 No primary locations on the micro topology needed for the consumer, and no mess of option 1.
@@ -293,7 +293,7 @@ clicks: 3
 <!--
 The IM delivers the meso level itself, next to the micro level, as a topology: meso net elements and net relations.
 0 Every meso net element aggregates micro net elements. Ideally one meso node per primary location, plus links for the tracks in between.
-1 Net relations keep the navigability, so routing on the meso level gives the same six connections as option 2.
+1 Net relations keep the navigability, so routing on the meso level gives the same six connections as option 2 found on the micro level.
 2 OPs, PLs and SoLs are positioned on the meso level separately, the way they are positioned on the micro level. One meso node, one PL: that is what telematics needs. The OP is an area over several nodes.
 3 And anything else can be positioned on it: a timing point, a planning speed, an IM border.
 This follows the practice of IMs that already keep a meso network, and it is the most future proof option.
@@ -328,7 +328,7 @@ This follows the practice of IMs that already keep a meso network, and it is the
 </div>
 </div>
 
-<div v-click class="card mt-5">Both build on option 2: generate the meso connections from the micro topology, then publish them as objects (3) or as a level of their own (4).</div>
+<div v-click class="card mt-5">Option 2 <b>infers</b> the connections from micro topology routing. In options 3 and 4 the <b>IM defines</b> them: nothing is built automatically, although an IM could use option 2 to do it.</div>
 
 <!--
 Option 3 puts properties on the connection. Option 4 lets you place other things on the meso view. They are not exclusive: a PL connection could later become a relation of the meso level.
@@ -399,7 +399,7 @@ Option 4 is where the gap shows: the ERA ontology has net elements in one flat b
 | **1 · Assume everything connected** | PL → OP, OP + SoL | ❌ too many connections | — | ✅ |
 | **1b · Main PL** | + a main PL per OP | ⚠️ some wrong, some missing | main PL property | ❌ |
 | **2 · Route on the micro topology** | micro topology + PL areas | ✅ drivable; not always requestable | — | ⚠️ needs micro topology |
-| **3 · PL connection object** | PL connections (generated from 2) | ✅ as curated by the IM | PL connection element | ❌ |
+| **3 · PL connection object** | PL connections, defined by the IM | ✅ as defined by the IM | PL connection element | ❌ |
 | **4 · Meso topology level** | meso level aggregating micro, OPs and PLs on it | ✅ drivable, 1 node = 1 PL | topology levels, aggregation | ❌ |
 
 </div>

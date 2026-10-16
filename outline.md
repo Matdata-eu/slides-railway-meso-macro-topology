@@ -16,8 +16,8 @@ Toy corridor for all new visuals: OP Vest (PL V) · OP Stasjon (PL P passenger, 
 11. **Option 1 · assume everything connected** · clique inside OP + all PLs of neighbouring OPs: 13 connections, 7 not drivable
 12. **Option 1b · main PL** · 5 connections, 2 wrong, 3 missing; needs a property RINF lacks
 13. **Option 2 · PLs on the micro topology** · PLs as NetAreaReferences, route out through navigable relations: 6 connections, all drivable (click a PL)
-14. **Drivable ≠ requestable** · shunting only, operational rules, capacity; publish all / flag / curate
-15. **Option 3 · PL connection object** · SoL-like meso object for PLs, generated with option 2, curated by the IM; can carry properties
+14. **Drivable ≠ requestable** · shunting only, operational rules, capacity; publish all / flag / let the IM define them
+15. **Option 3 · PL connection object** · SoL-like meso object for PLs, defined by the IM (could use option 2 to do it); could carry additional properties; positioned on the micro topology
 16. **Option 4 · A meso topology level** · IM delivers meso net elements aggregating micro ones, with navigability; OPs, PLs, SoLs (and timing points, borders, …) positioned on it; 1 meso node = 1 PL (MesoLevel)
 17. **Option 3 or option 4?** · properties on the connection vs positioning on a level; option 4 most future proof
 18. **What option 4 needs from RINF** · micro topology first; levels and aggregation (RTM, railML vs ERA none); hypothetical Turtle

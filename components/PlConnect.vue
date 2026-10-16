@@ -11,7 +11,7 @@ import {
  * mode 'assume':  option 1, every PL in an OP connected to every other, and to every PL of the neighbouring OPs.
  * mode 'main':    option 1b, one designated main PL per OP carries the connections.
  * mode 'route':   option 2, PLs are area locations on the micro topology; neighbours are found by routing.
- * mode 'explicit':option 3, the connections are their own mesoscopic objects, curated by the IM.
+ * mode 'explicit':option 3, the connections are their own mesoscopic objects, defined by the IM.
  * The top drawing is the micro topology, the bottom one the PL graph that results.
  */
 const props = withDefaults(defineProps<{ mode: 'assume' | 'main' | 'route' | 'explicit'; step?: number }>(), { step: 99 })
@@ -97,7 +97,7 @@ const caption = computed(() => {
   if (props.mode === 'route') return showAll.value
     ? 'All PL connections, generated from the micro topology. Hover an edge to see the route behind it.'
     : 'Click a primary location: walk out through navigable relations until you enter another PL.'
-  return 'The same connections as objects of their own, like a SoL for OPs. The IM decides which ones it publishes.'
+  return 'PL connections as objects of their own, like a SoL for OPs. The IM defines them and decides which ones it publishes.'
 })
 </script>
 
