@@ -170,7 +170,7 @@ When telematics needs more detail than the OPs give, it ends up in **subsidiary 
 </div>
 </div>
 
-<div v-click class="card mt-6 text-lg">🇳🇴 What Norway would like: <b>a shared best practice</b>. One we can implement, refer to and discuss, even if it will not arrive in the short term.</div>
+<div v-click class="card mt-6 text-lg">🇳🇴 What Norway would like: <b>a shared best practice</b>. One we can implement, refer to and discuss. Even if not every IM follows it, it is a <b>lighthouse</b> to steer towards.</div>
 
 ---
 layout: section
