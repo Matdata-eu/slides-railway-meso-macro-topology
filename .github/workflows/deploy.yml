@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Build Slidev
-        run: npm run build -- --base /slides-railway-meso-topology/
+        run: npm run build -- --base /slides-railway-meso-macro-topology/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

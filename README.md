@@ -5,7 +5,7 @@ It takes the railway topology to the mesoscopic level: what operational points (
 and sections of line (SoL) are, how differently infrastructure managers fill them in, and five ways to connect
 primary locations to each other. Presented on behalf of Bane NOR.
 
-**Live slides:** https://matdata-eu.github.io/slides-railway-meso-topology/
+**Live slides:** https://matdata-eu.github.io/slides-railway-meso-macro-topology/
 
 ## Getting started
 
@@ -24,7 +24,7 @@ Open http://localhost:3030 to see the slides, and http://localhost:3030/presente
 
 ## Publishing
 
-- **GitHub Pages** (`.github/workflows/deploy.yml`): every push to `main` builds the deck with base path `/slides-railway-meso-topology/` and deploys it. Change the base path if the repository gets another name.
+- **GitHub Pages** (`.github/workflows/deploy.yml`): every push to `main` builds the deck with base path `/slides-railway-meso-macro-topology/` and deploys it. Change the base path if the repository gets another name.
 - **PDF release** (`.github/workflows/release.yml`): pushing a tag such as `v1.0.0` exports the slides (with click steps) to PDF and attaches it to a GitHub release.
 
 ## Interactive components
