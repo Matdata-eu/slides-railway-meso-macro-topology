@@ -5,6 +5,8 @@ It takes the railway topology to the mesoscopic level: what operational points (
 and sections of line (SoL) are, how differently infrastructure managers fill them in, and five ways to connect
 primary locations to each other. Presented on behalf of Bane NOR.
 
+**Live slides:** https://matdata-eu.github.io/slides-railway-meso-topology/
+
 ## Getting started
 
 ```bash
@@ -45,3 +47,7 @@ Toy networks:
 | `PlConnect mode="route"` | Option 2 | Click a PL to route out of it through navigable relations; generate all PL connections |
 | `PlConnect mode="explicit"` | Option 3 | PL connections as objects; untick to keep one internal |
 | `MesoLevel` | Option 4 | A meso topology level aggregating the micro level, with OPs, PLs, SoLs and other things positioned on it |
+
+## License
+
+Code under the MIT License, slide content under CC BY 4.0. The Bane NOR logos are trademarks of Bane NOR SF and are not covered. See [LICENSE](LICENSE).

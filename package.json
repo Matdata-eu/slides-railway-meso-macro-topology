@@ -15,5 +15,6 @@
   },
   "devDependencies": {
     "playwright-chromium": "^1.45.0"
-  }
+  },
+  "license": "MIT AND CC-BY-4.0"
 }
