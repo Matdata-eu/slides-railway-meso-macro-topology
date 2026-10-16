@@ -1,0 +1,19 @@
+{
+  "name": "rinf-mesoscopic-topology",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dots and lines: operational points, primary locations and sections of line on a mesoscopic topology - Slidev presentation",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "52.14.2",
+    "@slidev/theme-default": "0.25.0",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.45.0"
+  }
+}
