@@ -1,6 +1,6 @@
 # Dots and lines: mesoscopic topology talk, outline
 
-Follow-up to "One network, one truth" (RINF topology talk). Deck: `C:\Users\mathi\Git\slides\rinf-mesoscopic-topology` (Slidev).
+Follow-up to "One network, one truth" (RINF topology talk). Slidev deck in this repository.
 Toy corridor for all new visuals: OP Vest (PL V) · OP Stasjon (PL P passenger, Y maintenance yard facing west, F freight terminal facing east) · OP Øst (PL Ø passenger, I industrial siding facing west).
 
 1. **Cover** · Dots and lines
@@ -24,8 +24,3 @@ Toy corridor for all new visuals: OP Vest (PL V) · OP Stasjon (PL P passenger, 
 19. **Five options side by side** · table; option 0 done by Norway, Belgium, the Netherlands, …
 20. **Three take-aways**
 21. **Questions** · contact
-
-Open points for Mathias:
-- Repository name and GitHub Pages base path (assumed `slides-railway-meso-topology`).
-- Event and length of the talk (not stated; deck is ~25–30 min).
-- Definitions on slide 6 are paraphrased; check wording against the regulation and TSI.
