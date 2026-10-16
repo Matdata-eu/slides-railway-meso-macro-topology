@@ -311,7 +311,7 @@ This follows the practice of IMs that already keep a meso network, and it is the
 
 - an **object** next to the topology, like a SoL
 - could carry **additional properties** on the connection: requestable, running time, …
-- no aggregation of micro elements
+- no aggregation of micro elements, but **positioned on the micro topology**
 - simple to add to RINF
 
 </div>
