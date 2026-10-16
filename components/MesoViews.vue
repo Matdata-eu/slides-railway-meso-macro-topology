@@ -14,7 +14,7 @@ const views = [
   { name: 'Micro · tracks', what: 'switches and tracks' },
   { name: 'Meso · OP and SoL', what: 'operational points, sections of line' },
   { name: 'Meso · PL', what: 'primary locations, PL connections' },
-  { name: 'Macro · line', what: 'one national railway line' },
+  { name: 'Macro · line', what: 'line ends, junctions, interchanges' },
 ]
 const opCentre = (id: string): Pt => { const b = ops.find(o => o.id === id)!.box; return [b[0] + b[2] / 2, 170] }
 const nodeList = Object.values(mnodes)
@@ -53,6 +53,9 @@ const nodeList = Object.values(mnodes)
       <g v-if="s === 3" class="fade">
         <line x1="20" y1="170" x2="990" y2="170" class="line" />
         <text x="300" y="200" class="opt">Railway line 2100 · A – B</text>
+        <circle cx="20" cy="170" r="9" class="opn" /><circle cx="990" cy="170" r="9" class="opn" />
+        <circle v-for="o in ops" :key="o.id" :cx="opCentre(o.id)[0]" cy="170" r="12" class="ghost" />
+        <text x="640" y="230" class="solt">Vest, Stasjon and Øst are just on the line: they disappear</text>
       </g>
     </svg>
     <div class="note">Every one of these is a topology: nodes and the relations between them. They are <b>views</b>, and an IM could report any of them.</div>
@@ -78,6 +81,7 @@ const nodeList = Object.values(mnodes)
 .pledge { stroke: var(--c-green); stroke-width: 3.5; }
 .pln { stroke: var(--c-bg); stroke-width: 2.5; }
 .plt { font-size: 13px; font-weight: 800; text-anchor: middle; fill: var(--c-bg); }
+.ghost { fill: none; stroke: var(--c-ink-subtle); stroke-width: 2; stroke-dasharray: 4 3; }
 .line { stroke: var(--c-blue); stroke-width: 9; stroke-linecap: round; }
 .note { font-size: 14px; text-align: center; color: var(--c-ink-mod); }
 .fade { animation: fadein .6s ease-out; }

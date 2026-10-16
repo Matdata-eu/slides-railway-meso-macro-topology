@@ -44,7 +44,7 @@ clicks: 1
 
 <!--
 Last time we built a micro topology step by step, and ended by aggregating it.
-Station tracks collapse into an operational point, with a section of line on each side. One more step and only the line remains.
+Station tracks collapse into an operational point, with a section of line on each side. One more step to macro: the line remains with its start and end stations, junctions and interchange stations. A station that is just on the line, like this one, disappears.
 Today: what exactly are those dots and lines, and are they a topology?
 -->
 
